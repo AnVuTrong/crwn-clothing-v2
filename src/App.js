@@ -1,32 +1,21 @@
-import { Routes, Route, Outlet} from 'react-router-dom';
+import { Routes, Route } from "react-router-dom";
 
-import Home from './routes/home/home.component';
-
-
-const Navigation = () => {
-  return (
-    <div>
-      <div>
-        <h1>Menu Item</h1>
-      </div>
-      <Outlet/>
-    </div>
-  )
-};
+import Navigation from "./routes/navigation/navigation.component";
+import Home from "./routes/home/home.component";
 
 const Shop = () => {
-  return <h1>User now in shop</h1>
+	return <h1>User now in shop</h1>;
 };
 
 const App = () => {
-  return (
-    <Routes>
-      <Route path='/' element={<Navigation/>}>
-        <Route index={true} element={<Home/>}/>
-        <Route path='shop' element={<Shop/>}/>
-      </Route>
-    </Routes>
-  );
+	return (
+		<Routes>
+			<Route path="/" element={<Navigation />}>
+				<Route index={true} element={<Home />} />
+				<Route path="shop" element={<Shop />} />
+			</Route>
+		</Routes>
+	);
 };
 
 export default App;
